@@ -42,4 +42,12 @@ object Chapter2 {
      * Exercise 2.4
      */
     fun <A, B, C> uncurry(f: (A) -> (B) -> C): (A, B) -> C = { a, b -> f(a)(b) }
+
+    /**
+     * Exercise 2.5
+     */
+    fun <A, B, C> compose(
+        f: (B) -> C,
+        g: (A) -> B,
+    ): (A) -> C = { a -> f(g(a)) }
 }

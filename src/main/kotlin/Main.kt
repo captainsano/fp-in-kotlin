@@ -1,15 +1,10 @@
 package com.captainsano
 
 fun main() {
-    val sum = { a: Int, b: Int -> a + b }
+    val sum5 = { a: Int -> a + 5 }
+    val mul3 = { a: Int -> a * 3 }
 
-    val sumCurry = Chapter2.curry(sum)
-    val add5 = sumCurry(5)
+    val composed = Chapter2.compose(sum5, mul3)
 
-    val add = Chapter2.uncurry(sumCurry)
-
-    println("curried: ${sumCurry(1)(2)}")
-    println("add5: ${add5(10)}")
-
-    println("add: ${add(20, 5)}")
+    println("Composed output: ${composed(5)}")
 }

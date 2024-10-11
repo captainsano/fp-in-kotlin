@@ -1,10 +1,12 @@
 package com.captainsano
 
 fun main() {
-    val order = { a: Int, b: Int -> a < b }
+    val sum = { a: Int, b: Int -> a + b }
 
-    println("isSorted: ${Chapter2.isSorted((1..10).toList(), order)}")
-    println("isSorted: ${Chapter2.isSorted(emptyList(), order)}")
-    println("isSorted: ${Chapter2.isSorted(listOf(1), order)}")
-    println("isSorted: ${Chapter2.isSorted(listOf(1, 2, 4, 3), order)}")
+    val sumCurry = Chapter2.curry(sum)
+
+    val add5 = sumCurry(5)
+
+    println("curried: ${sumCurry(1)(2)}")
+    println("add5: ${add5(10)}")
 }

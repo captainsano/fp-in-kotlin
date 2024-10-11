@@ -32,4 +32,9 @@ object Chapter2 {
             !order(aa.head, aa.tail.head) -> false
             else -> isSorted(aa.tail, order)
         }
+
+    /**
+     * Exercise 2.3
+     */
+    fun <A, B, C> curry(f: (A, B) -> C): (A) -> (B) -> C = { a: A -> { b: B -> f(a, b) } }
 }

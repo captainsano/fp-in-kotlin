@@ -1,5 +1,7 @@
 package com.captainsano
 
 fun main() {
-    println("Hello World!")
+    for (i in 0..10) {
+        println("$i: ${Chapter2.fib(i)}")
+    }
 }

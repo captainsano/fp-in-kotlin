@@ -13,4 +13,23 @@ object Chapter2 {
 
         return go(0, 1, n)
     }
+
+    /**
+     * Exercise 2.2
+     */
+    val <T> List<T>.tail: List<T>
+        get() = drop(1)
+
+    val <T> List<T>.head: T
+        get() = first()
+
+    tailrec fun <A> isSorted(
+        aa: List<A>,
+        order: (A, A) -> Boolean,
+    ): Boolean =
+        when {
+            aa.size <= 1 -> false
+            !order(aa.head, aa.tail.head) -> false
+            else -> isSorted(aa.tail, order)
+        }
 }

@@ -37,4 +37,9 @@ object Chapter2 {
      * Exercise 2.3
      */
     fun <A, B, C> curry(f: (A, B) -> C): (A) -> (B) -> C = { a: A -> { b: B -> f(a, b) } }
+
+    /**
+     * Exercise 2.4
+     */
+    fun <A, B, C> uncurry(f: (A) -> (B) -> C): (A, B) -> C = { a, b -> f(a)(b) }
 }

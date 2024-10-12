@@ -1,10 +1,7 @@
 package com.captainsano
 
 fun main() {
-    val sum5 = { a: Int -> a + 5 }
-    val mul3 = { a: Int -> a * 3 }
+    val myList = Chapter3.Cons(1, Chapter3.Cons(2, Chapter3.Nil))
 
-    val composed = Chapter2.compose(sum5, mul3)
-
-    println("Composed output: ${composed(5)}")
+    println("init: ${Chapter3.init(myList)}")
 }
